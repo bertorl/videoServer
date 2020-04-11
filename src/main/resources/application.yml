@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: 'video-server-web'
+  profiles:
+    active: 'test'
+
+
+server:
+  port: 8080
+
+
+---
+
+spring:
+  profiles: 'test'
+
+  data:
+    mongodb:
+      host: 'localhost'
+      port: 27017
+      database: 'video-server-test'
+  #     password: 'eYbJew4CtHzC'
+  #     username: 'admin'
+  #  cassandra:
+  #    contact-points: 'localhost'
+  #    port: 9042
+  #    keyspace-name: 'videoserver'
+jwt:
+  secret: 'zFFDxY2nudxUMD8SEqajc3KperzDfxjRXNvB38Nc3FuTaVKTgreQPC4grdBjpGsb'
+
+file-system-config:
+  path: '/usr/local/var/videoserver/data'
+---
+
+spring:
+  profiles: 'pro'
